@@ -7,7 +7,15 @@ body {
     -webkit-font-smoothing: antialiased;
     color: $dark;
 }
+.section-with-margin {
+    margin-left: 20px;  /* Adjust the value as needed */
+    margin-right: 20px; /* Adjust the value as needed */
+}
 
+element.style {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+    will-change: transform;
+}
 nav li:last-child a {
     background: $primary;
     &:hover {

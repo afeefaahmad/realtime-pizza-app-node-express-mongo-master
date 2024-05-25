@@ -15,21 +15,12 @@ const Emitter = require('events')
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
 // Database connection
-mongoose.connect(`mongodb+srv://${username}:${password}@cluster0.qznjytp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`, {
+mongoose.connect(`mongodb+srv://${username}:${password}@menus.qznjytp.mongodb.net/pizza?retryWrites=true&w=majority&appName=Cluster0`, {
     useNewUrlParser : true,
     useUnifiedTopology : true,
 });  
   const connection = mongoose.connection;
   
-  connection.once('open', () => {
-    console.log('MongoDB database connection established successfully');
-  });
-  
-  // Handle errors properly
-  connection.on('error', (err) => {
-    console.error('MongoDB connection error:', err);
-  });
-
 
 // Session store
 let mongoStore = new MongoDbStore({
